@@ -33,13 +33,13 @@ The React app starts at http://localhost:5173 — open this in your browser.
 ## How it works
 
 ```
-Browser (React)  ──fetch──▶  Express (port 3001)  ──SQL──▶  SQLite file (plants.db)
+Browser (React)  ──fetch──▶  Express (port 3001)  ──JSON──▶  plants.json (file DB)
      ◀──JSON──────────────────────────────────────────────────────────────────────
 ```
 
 - **Frontend** (React + Vite): UI, rendered in the browser
 - **Backend** (Node.js + Express): REST API, runs on your machine
-- **Database** (SQLite): a single `backend/plants.db` file — no separate DB server needed
+- **Database**: a single `backend/plants.json` file — no separate DB server needed
 
 ## API reference
 
