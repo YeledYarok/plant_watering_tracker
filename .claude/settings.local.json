@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Program Files/**)",
+      "Read(//c/Users/matan/AppData/Roaming/**)",
+      "Read(//c/Users/matan/AppData/Local/**)",
+      "Read(//c/Users/matan/**)",
+      "Bash(cmd.exe /c \"where node\")",
+      "Bash(cmd.exe /c \"where node 2>&1\")",
+      "Bash(cmd.exe /c \"node --version\")",
+      "Bash(powershell.exe -Command \"Get-Command npm | Select-Object -ExpandProperty Source\")",
+      "Bash(\"/c/Program Files/Meta Spark Studio/v154/Resources/bundle/node.exe\" --version)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(winget --version)",
+      "Bash(npm install:*)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/nodejs\")",
+      "Bash(npm --version)",
+      "Bash(cmd.exe /c \"node --version && npm --version\")",
+      "Bash(echo \"exit: $?\")",
+      "Bash(powershell.exe -NoProfile -Command \"node --version; npm --version\")",
+      "Bash(tr ';' '\\\\n')",
+      "Bash(powershell.exe -NoProfile -Command \"Get-ItemProperty ''HKLM:\\\\SOFTWARE\\\\nodejs'' -ErrorAction SilentlyContinue; Get-ItemProperty ''HKCU:\\\\SOFTWARE\\\\nodejs'' -ErrorAction SilentlyContinue\")",
+      "Bash(powershell.exe -NoProfile -Command \"winget list nodejs 2>&1\")"
+    ]
+  }
+}

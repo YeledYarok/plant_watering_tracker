@@ -1,0 +1,226 @@
+/* ── Reset & base ─────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f0f4f0;
+  color: #1a2e1a;
+  min-height: 100vh;
+}
+
+/* ── Layout ───────────────────────────────────────────────────────────────── */
+.app {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d6a2d;
+}
+
+header p {
+  color: #557a55;
+  margin-top: 0.25rem;
+}
+
+/* ── Add-plant form card ──────────────────────────────────────────────────── */
+.add-plant-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.add-plant-card h2 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #2d6a2d;
+}
+
+.form-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.form-row input {
+  flex: 1;
+  min-width: 140px;
+  padding: 0.6rem 0.85rem;
+  border: 1.5px solid #c8dfc8;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.form-row input:focus {
+  border-color: #2d6a2d;
+}
+
+.btn-add {
+  padding: 0.6rem 1.4rem;
+  background: #2d6a2d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.btn-add:hover { background: #245424; }
+.btn-add:disabled { background: #8ab88a; cursor: not-allowed; }
+
+.form-error {
+  margin-top: 0.5rem;
+  color: #b94040;
+  font-size: 0.85rem;
+}
+
+/* ── Dashboard grid ───────────────────────────────────────────────────────── */
+.dashboard-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard-header h2 {
+  font-size: 1.1rem;
+  color: #2d6a2d;
+}
+
+.plant-count {
+  font-size: 0.85rem;
+  color: #779977;
+}
+
+.plant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #779977;
+}
+
+.empty-state .emoji { font-size: 3rem; }
+.empty-state p { margin-top: 0.5rem; }
+
+/* ── Plant card ───────────────────────────────────────────────────────────── */
+.plant-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  border-top: 4px solid transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: transform 0.1s;
+}
+
+.plant-card:hover { transform: translateY(-2px); }
+
+/* Status-based accent colours */
+.plant-card.status-ok     { border-top-color: #4caf50; }
+.plant-card.status-soon   { border-top-color: #ff9800; }
+.plant-card.status-overdue { border-top-color: #f44336; }
+
+.plant-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.plant-meta {
+  font-size: 0.82rem;
+  color: #779977;
+}
+
+/* Status badge */
+.status-badge {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 99px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.status-badge.ok      { background: #e8f5e9; color: #2e7d32; }
+.status-badge.soon    { background: #fff3e0; color: #e65100; }
+.status-badge.overdue { background: #fdecea; color: #b71c1c; }
+
+/* Countdown numbers */
+.countdown {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #445544;
+}
+
+.countdown span strong { font-size: 1.1rem; }
+
+/* Buttons row */
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.btn-water {
+  flex: 1;
+  padding: 0.5rem;
+  background: #2d6a2d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-water:hover { background: #245424; }
+.btn-water:disabled { background: #8ab88a; cursor: not-allowed; }
+
+.btn-delete {
+  padding: 0.5rem 0.75rem;
+  background: #fdecea;
+  color: #b71c1c;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-delete:hover { background: #f44336; color: #fff; }
+
+/* ── Loading / error states ───────────────────────────────────────────────── */
+.loading, .fetch-error {
+  text-align: center;
+  padding: 4rem 1rem;
+  font-size: 1.1rem;
+  color: #779977;
+}
+
+.fetch-error { color: #b94040; }
